@@ -7,7 +7,9 @@ import styled from "styled-components";
 const CharacterLists = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const CharacterCardCont = styled.div`
@@ -72,7 +74,8 @@ export default function CharacterList() {
         }
       })
       .catch(err => {
-        throw new Error(err);
+        setErrorMessage(err.Error);
+        setLoading(false);
       });
   };
 
